@@ -15,7 +15,7 @@ func init() {
 }
 
 func TestDevice(t *testing.T) {
-	device, err := bbox.getDevice()
+	device, err := bbox.GetDevice()
 	if err != nil {
 		logrus.WithError(err).Error("cannot get device")
 	}
@@ -23,7 +23,7 @@ func TestDevice(t *testing.T) {
 }
 
 func TestWanIpStats(t *testing.T) {
-	stats, err := bbox.getWanIpStats()
+	stats, err := bbox.GetWanIpStats()
 	if err != nil {
 		logrus.WithError(err).Error("cannot get ip stats")
 	}
@@ -31,7 +31,7 @@ func TestWanIpStats(t *testing.T) {
 }
 
 func TestWanXdsl(t *testing.T) {
-	stats, err := bbox.getWanXdsl()
+	stats, err := bbox.GetWanXdsl()
 	if err != nil {
 		logrus.WithError(err).Error("cannot get wan xdsl")
 	}
@@ -39,7 +39,7 @@ func TestWanXdsl(t *testing.T) {
 }
 
 func TestWanIp(t *testing.T) {
-	stats, err := bbox.getWanIp()
+	stats, err := bbox.GetWanIp()
 	if err != nil {
 		logrus.WithError(err).Error("cannot get wan ip")
 	}

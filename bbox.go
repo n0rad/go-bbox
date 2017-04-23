@@ -98,7 +98,7 @@ func New() *Bbox {
 	}
 }
 
-func (c *Bbox) getDevice() (*DeviceInfo, error) {
+func (c *Bbox) GetDevice() (*DeviceInfo, error) {
 	body, err := c.GetResource("/device")
 	if err != nil {
 		return nil, err
@@ -118,7 +118,7 @@ func (c *Bbox) getDevice() (*DeviceInfo, error) {
 	return &response[0].Device, nil
 }
 
-func (c *Bbox) getWanIp() (*WanIp, error) {
+func (c *Bbox) GetWanIp() (*WanIp, error) {
 	body, err := c.GetResource("/wan/ip")
 	if err != nil {
 		return nil, err
@@ -138,7 +138,7 @@ func (c *Bbox) getWanIp() (*WanIp, error) {
 	return &response[0].Wan, nil
 }
 
-func (c *Bbox) getWanXdsl() (*WanXdsl, error) {
+func (c *Bbox) GetWanXdsl() (*WanXdsl, error) {
 	body, err := c.GetResource("/wan/xdsl")
 	if err != nil {
 		return nil, err
@@ -160,7 +160,7 @@ func (c *Bbox) getWanXdsl() (*WanXdsl, error) {
 	return &response[0].Wan.Xdsl, nil
 }
 
-func (c *Bbox) getWanIpStats() (*WanIpStats, error) {
+func (c *Bbox) GetWanIpStats() (*WanIpStats, error) {
 	body, err := c.GetResource("/wan/ip/stats")
 	if err != nil {
 		return nil, err
