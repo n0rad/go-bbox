@@ -4,7 +4,6 @@ import (
 	"net/http"
 	"fmt"
 	"io/ioutil"
-	"github.com/Sirupsen/logrus"
 	"encoding/json"
 	"github.com/n0rad/go-erlog/errs"
 	"strconv"
@@ -197,7 +196,6 @@ func (c *Bbox) GetResource(path string) ([]byte, error) {
 	defer resp.Body.Close()
 
 	body, err := ioutil.ReadAll(resp.Body)
-	logrus.Debugf("<<< %s", body)
 
 	if resp.StatusCode > 299 {
 		return nil, fmt.Errorf("Status code: %d", resp.StatusCode)
